@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peaceful Puffs | Premium Hair Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #7e22ce;
+            --primary-light: #a855f7;
+            --primary-dark: #6b21a8;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://placehold.co/1600x900');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(126,34,206,0.1);
+        }
+        
+        .cart-badge {
+            font-size: 10px;
+            top: -5px;
+            right: -5px;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Announcement Bar -->
+    <div class="bg-purple-900 text-white text-center py-2 text-sm">
+        ✨ Free shipping on orders over $25 | Use code: PEACEFUL10 for 10% off your first order ✨
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <img src="https://placehold.co/50x50" alt="Peaceful Puffs logo" class="h-10 w-10 rounded-full">
+                        <span class="ml-2 text-2xl font-bold text-purple-800">Peaceful Puffs</span>
+                    </a>
+                    <div class="hidden md:ml-8 md:flex md:space-x-6">
+                        <div class="dropdown relative">
+                            <button class="flex items-center text-gray-700 hover:text-purple-800 py-2">
+                                Shop <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="dropdown-menu absolute hidden bg-white shadow-lg rounded-md mt-2 w-48 py-1 z-50">
+                                <a href="#scrunchies" class="block px-4 py-2 text-gray-700 hover:bg-purple-50">All Scrunchies</a>
+                                <a href="#hair-accessories" class="block px-4 py-2 text-gray-700 hover:bg-purple-50">Hair Accessories</a>
+                                <a href="#sets" class="block px-4 py-2 text-gray-700 hover:bg-purple-50">Gift Sets</a>
+                                <a href="#sale" class="block px-4 py-2 text-gray-700 hover:bg-purple-50">Sale</a>
+                            </div>
+                        </div>
+                        <a href="#about" class="text-gray-700 hover:text-purple-800 py-2">About</a>
+                        <a href="#blog" class="text-gray-700 hover:text-purple-800 py-2">Blog</a>
+                        <a href="#contact" class="text-gray-700 hover:text-purple-800 py-2">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-gray-700 hover:text-purple-800">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="flex-shrink-0 relative">
+                        <button id="cartBtn" class="relative p-2 text-gray-700 hover:text-purple-800">
+                            <i class="fas fa-shopping-bag text-xl"></i>
+                            <span id="cartCounter" class="cart-badge absolute bg-red-500 text-white rounded-full px-2 py-1 hidden">0</span>
+                        </button>
+                    </div>
+                    <button id="authBtn" class="btn-primary ml-2 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white">
+                        Login
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-700 hover:text-purple-800">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-3">
+                <div class="pt-2 pb-4 space-y-1">
+                    <a href="#scrunchies" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-purple-50 rounded-md">Scrunchies</a>
+                    <a href="#hair-accessories" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-purple-50 rounded-md">Hair Accessories</a>
+                    <a href="#sets" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-purple-50 rounded-md">Gift Sets</a>
+                    <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-purple-50 rounded-md">About Us</a>
+                    <a href="#blog" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-purple-50 rounded-md">Blog</a>
+                    <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-purple-50 rounded-md">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero relative h-[500px] flex items-center">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center w-full">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Wrap Your Hair in Luxury</h1>
+            <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Discover our collection of premium scrunchies that combine style, comfort, and hair-friendly design</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#products" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-purple-800 bg-white hover:bg-purple-50">
+                    Shop Collection
+                </a>
+                <a href="#collections" class="inline-flex items-center px-6 py-3 border border-white text-base font-medium rounded-md text-white hover:bg-white/10">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold tracking-wide text-purple-800 uppercase">Our Collections</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2">Find Your Perfect Match</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <a href="#scrunchies" class="group relative block overflow-hidden rounded-lg">
+                    <img src="https://placehold.co/600x400/7e22ce/FFFFFF?text=Silk%20Scrunchies" alt="Silk scrunchies in various pastel colors arranged in a flat lay" class="w-full h-80 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-end justify-start p-6">
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold text-white">Silk Elegance</h3>
+                            <p class="text-purple-200 mt-1">Luxurious silk scrunchies</p>
+                            <button class="mt-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-md hover:bg-white/20 transition">View Collection</button>
+                        </div>
+                    </div>
+                </a>
+                <a href="#velvet" class="group relative block overflow-hidden rounded-lg">
+                    <img src="https://placehold.co/600x400/6b21a8/FFFFFF?text=Velvet%20Scrunchies" alt="Velvet scrunchies in deep jewel tones displayed on a marble surface" class="w-full h-80 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-end justify-start p-6">
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold text-white">Velvet Dreams</h3>
+                            <p class="text-purple-200 mt-1">Plush velvet collection</p>
+                            <button class="mt-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-md hover:bg-white/20 transition">View Collection</button>
+                        </div>
+                    </div>
+                </a>
+                <a href="#organic" class="group relative block overflow-hidden rounded-lg">
+                    <img src="https://placehold.co/600x400/a855f7/FFFFFF?text=Organic%20Cotton" alt="Organic cotton scrunchies with natural dye colors surrounded by plants" class="w-full h-80 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 flex items-end justify-start p-6">
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold text-white">Organic Collection</h3>
+                            <p class="text-purple-200 mt-1">Eco-friendly & sustainable</p>
+                            <button class="mt-2 px-4 py-2 bg-white/10 backdrop-blur-sm text-white border border-white/30 rounded-md hover:bg-white/20 transition">View Collection</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP Section -->
+    <section class="py-12 bg-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="flex justify-center mb-4">
+                        <div class="bg-purple-100 p-3 rounded-full">
+                            <i class="fas fa-gem text-purple-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Premium Materials</h3>
+                    <p class="text-gray-600">Only the finest fabrics that are gentle on your hair and built to last</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="flex justify-center mb-4">
+                        <div class="bg-purple-100 p-3 rounded-full">
+                            <i class="fas fa-leaf text-purple-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Eco-Friendly</h3>
+                    <p class="text-gray-600">Sustainable materials and recyclable packaging</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="flex justify-center mb-4">
+                        <div class="bg-purple-100 p-3 rounded-full">
+                            <i class="fas fa-truck text-purple-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Fast Shipping</h3>
+                    <p class="text-gray-600">Orders shipped within 24 hours with tracking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold tracking-wide text-purple-800 uppercase">Our Products</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2">Shop Best Sellers</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://placehold.co/600x600/f5f3ff/7e22ce?text=Silk+Scrunchie" alt="Luxury silk scrunchie in lavender color with satin finish" class="w-full h-80 object-cover">
+                            <div class="absolute top-2 right-2 bg-orange-400 text-white text-xs font-bold px-2 py-1 rounded-full">BESTSELLER</div>
+                        </a>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition">
+                            <i class="far fa-heart text-purple-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <a href="#">
+                            <h3 class="font-semibold text-lg mb-1 hover:text-purple-700 transition">Lavender Silk Scrunchie</h3>
+                            <div class="flex items-center mb-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-1">(42)</span>
+                            </div>
+                        </a>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-purple-700">$12.99</span>
+                            <button class="add-to-cart-btn px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition flex items-center">
+                                <i class="fas fa-plus text-xs mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://placehold.co/600x600/f8fafc/6b21a8?text=Velvet+Scrunchie" alt="Plush velvet scrunchie in deep emerald green color" class="w-full h-80 object-cover">
+                            <div class="absolute top-2 right-2 bg-green-400 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</div>
+                        </a>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition">
+                            <i class="far fa-heart text-purple-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <a href="#">
+                            <h3 class="font-semibold text-lg mb-1 hover:text-purple-700 transition">Emerald Velvet Scrunchie</h3>
+                            <div class="flex items-center mb-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-1">(28)</span>
+                            </div>
+                        </a>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-purple-700">$14.99</span>
+                            <button class="add-to-cart-btn px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition flex items-center">
+                                <i class="fas fa-plus text-xs mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://placehold.co/600x600/f5f3ff/a855f7?text=Satin+Scrunchie" alt="Boho style satin scrunchie with floral patterns on neutral background" class="w-full h-80 object-cover">
+                        </a>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition">
+                            <i class="far fa-heart text-purple-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <a href="#">
+                            <h3 class="font-semibold text-lg mb-1 hover:text-purple-700 transition">Boho Floral Scrunchie</h3>
+                            <div class="flex items-center mb-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-1">(16)</span>
+                            </div>
+                        </a>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-purple-700">$10.99</span>
+                            <button class="add-to-cart-btn px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition flex items-center">
+                                <i class="fas fa-plus text-xs mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://placehold.co/600x600/f5f3ff/7e22ce?text=Rainbow+Set" alt="Set of three satin scrunchies in rainbow colors arranged in gradient" class="w-full h-80 object-cover">
+                            <div class="absolute top-2 right-2 bg-red-400 text-white text-xs font-bold px-2 py-1 rounded-full">SALE</div>
+                        </a>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition">
+                            <i class="far fa-heart text-purple-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <a href="#">
+                            <h3 class="font-semibold text-lg mb-1 hover:text-purple-700 transition">Satin Rainbow Set</h3>
+                            <div class="flex items-center mb-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-1">(63)</span>
+                            </div>
+                        </a>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-purple-700"><span class="line-through text-gray-400 text-sm">$32.97</span> $24.99</span>
+                            <button class="add-to-cart-btn px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition flex items-center">
+                                <i class="fas fa-plus text-xs mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hair Accessories Section -->
+            <div class="text-center mb-12 mt-16">
+                <span class="text-sm font-semibold tracking-wide text-purple-800 uppercase">More Accessories</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2">Complete Your Look</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Accessory 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://placehold.co/600x600/f8fafc/6b21a8?text=Pearl+Clip" alt="Gold hair clip with pearl details on white background" class="w-full h-80 object-cover">
+                        </a>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition">
+                            <i class="far fa-heart text-purple-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <a href="#">
+                            <h3 class="font-semibold text-lg mb-1 hover:text-purple-700 transition">Pearl Hair Clip</h3>
+                            <div class="flex items-center mb-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-1">(35)</span>
+                            </div>
+                        </a>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-purple-700">$16.99</span>
+                            <button class="add-to-cart-btn px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition flex items-center">
+                                <i class="fas fa-plus text-xs mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accessory 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://placehold.co/600x600/f5f3ff/a855f7?text=Headband" alt="Leopard print wide headband on wooden surface" class="w-full h-80 object-cover">
+                            <div class="absolute top-2 right-2 bg-green-400 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</div>
+                        </a>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition">
+                            <i class="far fa-heart text-purple-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <a href="#">
+                            <h3 class="font-semibold text-lg mb-1 hover:text-purple-700 transition">Leopard Print Headband</h3>
+                            <div class="flex items-center mb-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-1">(12)</span>
+                            </div>
+                        </a>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-purple-700">$18.99</span>
+                            <button class="add-to-cart-btn px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition flex items-center">
+                                <i class="fas fa-plus text-xs mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accessory 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://placehold.co/600x600/f8fafc/7e22ce?text=Hair+Elastics" alt="Set of 5 neutral tone hair elastics arranged in circle" class="w-full h-80 object-cover">
+                        </a>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition">
+                            <i class="far fa-heart text-purple-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <a href="#">
+                            <h3 class="font-semibold text-lg mb-1 hover:text-purple-700 transition">Minimalist Hair Elastics</h3>
+                            <div class="flex items-center mb-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-1">(84)</span>
+                            </div>
+                        </a>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-purple-700">$8.99</span>
+                            <button class="add-to-cart-btn px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition flex items-center">
+                                <i class="fas fa-plus text-xs mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accessory 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative">
+                        <a href="#">
+                            <img src="https://placehold.co/600x600/f5f3ff/6b21a8?text=Barrettes" alt="Set of 3 geometric shaped barrettes in gold finish" class="w-full h-80 object-cover">
+                        </a>
+                        <button class="absolute bottom-2 right-2 bg-white/90 p-2 rounded-full shadow-md hover:bg-white transition">
+                            <i class="far fa-heart text-purple-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <a href="#">
+                            <h3 class="font-semibold text-lg mb-1 hover:text-purple-700 transition">Geometric Barrettes</h3>
+                            <div class="flex items-center mb-1">
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="text-gray-500 text-sm ml-1">(27)</span>
+                            </div>
+                        </a>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-purple-700">$14.99</span>
+                            <button class="add-to-cart-btn px-3 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition flex items-center">
+                                <i class="fas fa-plus text-xs mr-1"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#collections" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 transition">
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div class="mb-8 lg:mb-0">
+                    <img src="https://placehold.co/600x800" alt="Founder of Peaceful Puffs holding various scrunchies while smiling" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div>
+                    <span class="text-sm font-semibold tracking-wide text-purple-800 uppercase">Our Story</span>
+                    <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-6">More Than Just Scrunchies</h2>
+                    <p class="text-gray-600 mb-4">Peaceful Puffs began as a passion project in 2022 when founder Emily Rodriguez couldn't find hair accessories that combined both style and comfort. After years of frustration with hair ties that caused breakage and left creases, she set out to create something better.</p>
+                    <p class="text-gray-600 mb-6">Each scrunchie is carefully crafted with premium materials that are gentle on all hair types. We believe that small details make big differences - that's why every stitch, fabric choice, and design element is thoughtfully considered.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-semibold text-purple-800 mb-1">Our Mission</h4>
+                            <p class="text-gray-600 text-sm">To create beautiful, functional hair accessories that make you feel confident and comfortable.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h4 class="font-semibold text-purple-800 mb-1">Our Values</h4>
+                            <p class="text-gray-600 text-sm">Quality craftsmanship, sustainable practices, and inclusive design for all hair types.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-flex items-center px-5 py-2.5 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 transition">
+                        Learn More About Us
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold tracking-wide text-purple-800 uppercase">Happy Customers</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2">Kind Words From Our Community</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60" alt="Customer Sarah Johnson smiling with a lavender scrunchie in her hair" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Sarah J.</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The silk scrunchies are game-changers! I can wear them all day without any hair breakage or creases. The lavender color is my absolute favorite and goes with everything."</p>
+                    <p class="text-sm text-gray-400 mt-2">- Verified Purchase</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60" alt="Customer Emily Chen holding the rainbow scrunchie set" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Emily C.</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"I bought the rainbow set for my daughter and they've held up perfectly through many washes. She gets compliments daily and loves that she can match them to her outfits."</p>
+                    <p class="text-sm text-gray-400 mt-2">- Verified Purchase</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60" alt="Customer Mia Rodriguez wearing the velvet scrunchie" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Mia R.</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The velvet scrunchie adds such a luxurious touch to my outfits. It's become my go-to accessory for work and evenings out. I've already bought three in different colors!"</p>
+                    <p class="text-sm text-gray-400 mt-2">- Repeat Customer</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-5 py-2.5 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition">
+                    Read More Reviews
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-16 bg-purple-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold tracking-wide text-purple-800 uppercase">From The Blog</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2">Hair Care Tips & Styling Ideas</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <a href="#">
+                        <img src="https://placehold.co/600x400/f5f3ff/a855f7?text=Hair+Care" alt="Woman with long hair holding a silk scrunchie while looking in mirror" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-purple-800 uppercase">Hair Care</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3 hover:text-purple-700 transition">5 Reasons to Switch to Silk Scrunchies</h3>
+                            <p class="text-gray-600 text-sm mb-4">Discover how switching to silk scrunchies can transform your hair health and reduce breakage.</p>
+                            <p class="text-purple-600 text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <a href="#">
+                        <img src="https://placehold.co/600x400/f8fafc/7e22ce?text=Styling" alt="Various hairstyles using scrunchies displayed on different models" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-purple-800 uppercase">Styling</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3 hover:text-purple-700 transition">7 Creative Ways to Style Your Scrunchies</h3>
+                            <p class="text-gray-600 text-sm mb-4">From ponytails to braids, explore stylish ways to wear your Peaceful Puffs scrunchies.</p>
+                            <p class="text-purple-600 text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                    <a href="#">
+                        <img src="https://placehold.co/600x400/f5f3ff/6b21a8?text=Sustainability" alt="Eco-friendly materials laid out on wooden table for scrunchie making" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-purple-800 uppercase">Sustainability</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3 hover:text-purple-700 transition">Our Commitment to Sustainable Fashion</h3>
+                            <p class="text-gray-600 text-sm mb-4">Learn about our eco-friendly materials and sustainable production practices.</p>
+                            <p class="text-purple-600 text-sm font-medium">Read More <i class="fas fa-arrow-right ml-1"></i></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-5 py-2.5 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 transition">
+                    View All Articles
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-purple-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold mb-2">Join Our Community</h2>
+                    <p class="opacity-90">Subscribe for exclusive offers, styling tips, and first access to new collections!</p>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="flex flex-col sm:flex-row gap-3">
+                        <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 flex-grow">
+                        <button type="submit" class="px-6 py-3 bg-white text-purple-800 font-medium rounded-md hover:bg-gray-100 transition">Subscribe</button>
+                    </form>
+                    <p class="text-xs opacity-75 mt-2">By subscribing, you agree to our Privacy Policy and consent to receive updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold tracking-wide text-purple-800 uppercase">Get In Touch</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2">We'd Love to Hear From You</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Send Us a Message</h3>
+                    <form class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">First Name*</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                <input type="text" id="last-name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email*</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject*</label>
+                            <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <option>General Inquiry</option>
+                                <option>Order Question</option>
+                                <option>Wholesale Inquiry</option>
+                                <option>Press & Media</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message*</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-purple-600 text-white font-medium rounded-md hover:bg-purple-700 transition">Send Message</button>
+                    </form>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Our Studio</h4>
+                                <p class="text-gray-600">123 Scrunchie Lane<br>Fashion District<br>New York, NY 10001</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Email Us</h4>
+                                <p class="text-gray-600">hello@peacefulpuffs.com<br>support@peacefulpuffs.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Call Us</h4>
+                                <p class="text-gray-600">(555) 123-4567<br>Monday - Friday: 9AM - 5PM EST</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-comment-dots text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium">Live Chat</h4>
+                                <p class="text-gray-600">Chat with us instantly during business hours</p>
+                                <button class="mt-2 text-sm text-purple-600 hover:text-purple-800 font-medium">Start Chat</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-semibold mb-3">Follow Our Journey</h4>
+                        <div class="flex space-x-3">
+                            <a href="#" class="bg-purple-100 p-2 rounded-full text-purple-600 hover:bg-purple-200 transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="bg-purple-100 p-2 rounded-full text-purple-600 hover:bg-purple-200 transition"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="bg-purple-100 p-2 rounded-full text-purple-600 hover:bg-purple-200 transition"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#" class="bg-purple-100 p-2 rounded-full text-purple-600 hover:bg-purple-200 transition"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" class="bg-purple-100 p-2 rounded-full text-purple-600 hover:bg-purple-200 transition"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <img src="https://placehold.co/50x50" alt="Peaceful Puffs logo" class="h-8 w-8 rounded-full mr-2">
+                        Peaceful Puffs
+                    </h3>
+                    <p class="text-gray-400 mb-4">Premium scrunchies and hair accessories designed for comfort, style, and sustainability.</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="bg-gray-800 p-2 rounded-full text-gray-300 hover:bg-purple-600 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="bg-gray-800 p-2 rounded-full text-gray-300 hover:bg-purple-600 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="bg-gray-800 p-2 rounded-full text-gray-300 hover:bg-purple-600 hover:text-white transition"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="bg-gray-800 p-2 rounded-full text-gray-300 hover:bg-purple-600 hover:text-white transition"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Shop</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">All Scrunchies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Bestsellers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Hair Accessories</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Gift Sets</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sale</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Help</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Returns & Exchanges</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Order Tracking</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Our Story</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Wholesale Inquiries</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="md:flex md:items-center md:justify-between">
+                    <div class="text-center md:text-left mb-4 md:mb-0">
+                        <p class="text-sm text-gray-400">Copyright &copy; 2023 Peaceful Puffs. All rights reserved.</p>
+                    </div>
+                    <div class="flex justify-center md:justify-end space-x-6">
+                        <a href="#" class="text-sm text-gray-400 hover:text-white">Privacy Policy</a>
+                        <a href="#" class="text-sm text-gray-400 hover:text-white">Terms of Service</a>
+                        <a href="#" class="text-sm text-gray-400 hover:text-white">Accessibility</a>
+                    </div>
+                </div>
+                <div class="mt-4 text-center text-xs text-gray-500">
+                    <p>Peaceful Puffs is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cartSidebar" class="fixed top-0 right-0 w-full md:w-96 h-full bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col">
+        <div class="p-4 border-b border-gray-200">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-bold">Your Shopping Cart</h3>
+                <button id="closeCartBtn" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <p class="text-sm text-gray-500 mt-1" id="cartCountText">0 items</p>
+        </div>
+        <div id="cartItems" class="flex-grow overflow-y-auto p-4">
+            <!-- Empty cart state -->
+            <div class="text-center py-16">
+                <i class="fas fa-shopping-bag text-4xl text-gray-300 mb-4"></i>
+                <h4 class="font-medium text-gray-700 mb-2">Your cart is empty</h4>
+                <p class="text-gray-500 mb-4">Looks like you haven't added anything to your cart yet</p>
+                <a href="#products" class="inline-block px-6 py-2 text-sm bg-purple-600 text-white rounded-md hover:bg-purple-700 transition">Continue Shopping</a>
+            </div>
+        </div>
+        <div class="border-t border-gray-200 p-4">
+            <div class="space-y-3 mb-4">
+                <div class="flex justify-between">
+                    <span class="text-gray-600">Subtotal</span>
+                    <span id="cartSubtotal" class="font-medium">$0.00</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">Shipping</span>
+                    <span class="font-medium text-purple-600">Calculated at checkout</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-600">Taxes</span>
+                    <span class="font-medium text-purple-600">Calculated at checkout</span>
+                </div>
+            </div>
+            <button class="w-full py-3 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition font-medium mb-2">Checkout</button>
+            <p class="text-xs text-center text-gray-500">or <a href="#products" class="text-purple-600 hover:text-purple-800">Continue Shopping</a></p>
+            <div class="flex items-center justify-center mt-4 space-x-2">
+                <img src="https://placehold.co/40x20" alt="Visa payment icon" class="h-5">
+                <img src="https://placehold.co/40x20" alt="Mastercard payment icon" class="h-5">
+                <img src="https://placehold.co/40x20" alt="American Express payment icon" class="h-5">
+                <img src="https://placehold.co/40x20" alt="Paypal payment icon" class="h-5">
+                <img src="https://placehold.co/40x20" alt="Apple Pay payment icon" class="h-5">
+            </div>
+        </div>
+    </div>
+    <div id="cartOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 relative">
+            <button id="closeLoginBtn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">Welcome Back</h3>
+                <p class="text-gray-600">Sign in to access your account</p>
+            </div>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label for="loginEmail" class="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+                    <input type="email" id="loginEmail" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                </div>
+                <div>
+                    <label for="loginPassword" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                    <input type="password" id="loginPassword" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="rememberMe" class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
+                        <label for="rememberMe" class="ml-2 block text-sm text-gray-700">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-purple-600 hover:text-purple-500">Forgot password?</a>
+                </div>
+                <button type="submit" class="w-full py-3 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition font-medium">Sign In</button>
+            </form>
+            <div class="mt-6">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                    </div>
+                </div>
+                <div class="mt-6 grid grid-cols-3 gap-3">
+                    <a href="#" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                        <i class="fab fa-google text-lg"></i>
+                    </a>
+                    <a href="#" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                        <i class="fab fa-facebook-f text-lg text-blue-600"></i>
+                    </a>
+                    <a href="#" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                        <i class="fab fa-apple text-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-4 text-center text-sm">
+                <p class="text-gray-600">Don't have an account? <a href="#" id="showSignupBtn" class="text-purple-600 hover:text-purple-500 font-medium">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 relative">
+            <button id="closeSignupBtn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900 mb-1">Create Account</h3>
+                <p class="text-gray-600">Join the Peaceful Puffs community</p>
+            </div>
+            <form id="signupForm" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="signupFirstName" class="block text-sm font-medium text-gray-700 mb-1">First name*</label>
+                        <input type="text" id="signupFirstName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label for="signupLastName" class="block text-sm font-medium text-gray-700 mb-1">Last name*</label>
+                        <input type="text" id="signupLastName" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                </div>
+                <div>
+                    <label for="signupEmail" class="block text-sm font-medium text-gray-700 mb-1">Email address*</label>
+                    <input type="email" id="signupEmail" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                </div>
+                <div>
+                    <label for="signupPassword" class="block text-sm font-medium text-gray-700 mb-1">Password*</label>
+                    <input type="password" id="signupPassword" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <p class="mt-1 text-xs text-gray-500">Minimum 8 characters with at least one number</p>
+                </div>
+                <div>
+                    <label for="confirmPassword" class="block text-sm font-medium text-gray-700 mb-1">Confirm password*</label>
+                    <input type="password" id="confirmPassword" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="agreeTerms" class="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded">
+                    <label for="agreeTerms" class="ml-2 block text-sm text-gray-700">I agree to the <a href="#" class="text-purple-600 hover:text-purple-500">Terms of Service</a> and <a href="#" class="text-purple-600 hover:text-purple-500">Privacy Policy</a></label>
+                </div>
+                <button type="submit" class="w-full py-3 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition font-medium">Create Account</button>
+            </form>
+            <div class="mt-6">
+                <div class="relative">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-cent
